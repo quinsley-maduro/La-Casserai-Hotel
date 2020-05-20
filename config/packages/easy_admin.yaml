@@ -1,0 +1,27 @@
+easy_admin:
+   design:
+       menu:
+         - {label: "La Casserai"}
+         - label: "Kamers"
+           children:
+             - {entity: Kamer, label: "kamers lijst", icon: "th-list"}
+             - {entity: Kamer, label: "kamers toevoegen", icon: "plus", params: {action: 'new'}}
+         - label: "categorie"
+           children:
+             - {entity: Categorie, label: "categorieën", icon: "th-list"}
+             - {entity: Categorie, label: "categorie toevoegen", icon: "plus", params: {action: 'new'}}
+         - {label: "Gebruiker"}
+         - {entity: User, icon: "user", permission: 'ROLE_ADMIN'}
+   site_name: 'La Casserai Hotel'
+   user:
+       display_name: true
+       display_avatar: true
+       name_property_path: 'fullname'
+
+   entities:
+      # List the entity class name you want to manage
+       - App\Entity\Kamer
+       - App\Entity\Categorie
+       - App\Entity\User
+
+
